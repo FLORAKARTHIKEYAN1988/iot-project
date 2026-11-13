@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Diagnostic Centre | Book Tests Online</title>
+<style>
+:root{--navy:#10345b;--blue:#1769aa;--teal:#05ffea;--pale:#eef7fc;--ink:#183047;--muted:#64748b;--line:#dce7ef;--white:#fff}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:var(--ink);background:#f7fbfe}
+header{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.wrap{max-width:1120px;margin:auto;padding:0 22px}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;color:var(--navy);font-size:19px}.logo{height:42px;width:42px;border-radius:13px;background:linear-gradient(135deg,#1769aa,#0d9488);display:grid;place-items:center;color:white;font-size:23px}
+nav{display:flex;align-items:center;gap:20px}nav a{color:var(--ink);text-decoration:none;font-size:14px;font-weight:650}.btn{border:0;border-radius:10px;padding:12px 17px;font-weight:750;cursor:pointer;background:var(--blue);color:white}.btn.secondary{background:#e6f2fa;color:var(--navy)}.btn.green{background:#12835d}
+.hero{padding:58px 0 45px;background:linear-gradient(115deg,#e9f6ff 0%,#f8fcff 58%,#e8f7f4 100%)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}.eyebrow{color:var(--teal);font-size:12px;letter-spacing:1.5px;font-weight:850;text-transform:uppercase}
+h1{font-size:clamp(34px,5vw,53px);line-height:1.08;letter-spacing:-1.6px;color:var(--navy);margin:12px 0 17px}.lead{font-size:17px;line-height:1.65;color:#53677a;max-width:560px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.hero-card{background:white;border:1px solid #d8e9f2;border-radius:24px;padding:26px;box-shadow:0 18px 50px #17466b14}
+.hero-card .big-icon{font-size:58px;text-align:center;padding:22px;background:var(--pale);border-radius:18px}.hero-card h3{text-align:center;color:var(--navy);margin:18px 0 8px}.hero-card p{text-align:center;color:var(--muted);font-size:14px;margin:0}
+.trust{display:flex;gap:22px;flex-wrap:wrap;margin-top:27px;color:#486176;font-size:13px;font-weight:650}.trust span:before{content:"✓";color:var(--teal);font-weight:900;margin-right:7px}
+section{padding:54px 0}.section-head{text-align:center;margin-bottom:28px}.section-head h2{color:var(--navy);font-size:30px;margin:7px 0}.section-head p{color:var(--muted);margin:0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card{background:white;border:1px solid var(--line);border-radius:17px;padding:22px;box-shadow:0 7px 24px #153b5910}.card-icon{height:44px;width:44px;border-radius:13px;background:#e9f5fb;display:grid;place-items:center;font-size:23px}.card h3{color:var(--navy);margin:13px 0 7px}.card p{color:var(--muted);font-size:14px;line-height:1.5}.price{font-weight:850;color:var(--teal);font-size:21px}.test-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.test{display:flex;justify-content:space-between;align-items:center;gap:12px;background:white;border:1px solid var(--line);border-radius:12px;padding:15px}.test small{display:block;color:var(--muted);margin-top:4px}.test strong{color:var(--navy)}.test input{accent-color:var(--teal);width:18px;height:18px}
+.booking-area{background:#edf6fb}.booking-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}.form-card{background:white;border:1px solid var(--line);border-radius:18px;padding:24px}.form-card h3{margin-top:0;color:var(--navy)}
+label{display:block;font-size:13px;font-weight:700;color:#40576c;margin:13px 0 6px}input,select,textarea{width:100%;padding:12px;border:1px solid #cddbe5;border-radius:9px;font:inherit;color:var(--ink);background:white}input:focus,select:focus,textarea:focus{outline:2px solid #9bd5ed;border-color:var(--blue)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.total{display:flex;justify-content:space-between;background:#edf8f5;border-radius:10px;padding:14px;margin:17px 0;font-weight:800;color:var(--navy)}
+.notice{font-size:12px;color:var(--muted);line-height:1.5}.admin{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;overflow:auto}.admin-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.admin table{width:100%;border-collapse:collapse;font-size:13px;margin-top:15px}.admin th,.admin td{text-align:left;padding:11px;border-bottom:1px solid var(--line);white-space:nowrap}.admin th{color:var(--muted);background:#f7fafc}.status{color:#08785c;font-weight:800}
+footer{background:var(--navy);color:white;padding:30px 0;margin-top:20px}footer p{color:#c9d8e6;font-size:13px}.hidden{display:none!important}.tag{display:inline-block;background:#e7f7f3;color:#08785c;border-radius:99px;padding:5px 10px;font-size:11px;font-weight:800}
+@media(max-width:760px){nav{display:none}.hero-grid,.booking-grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.test-list{grid-template-columns:1fr}.hero{padding-top:38px}.row2{grid-template-columns:1fr}.wrap{padding:0 16px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <div class="brand"><div class="logo">✚</div><span id="brandName">Your Diagnostic Centre</span></div>
+  <nav><a href="#services">Services</a><a href="#tests">Tests & Packages</a><a href="#booking">Book a Test</a><a href="#admin">Admin</a></nav>
+  <a class="btn" href="#booking" style="text-decoration:none">Book Now</a>
+</div></header>
+<main>
+<section class="hero"><div class="wrap hero-grid">
+  <div><div class="eyebrow">Care • Accuracy • Convenience</div><h1>Reliable diagnostic services, made simple.</h1>
+    <p class="lead">Book laboratory tests online, choose home sample collection, and manage your appointments with ease.</p>
+    <div class="hero-actions"><a class="btn" href="#booking" style="text-decoration:none">Book a Test</a><a class="btn secondary" href="#tests" style="text-decoration:none">Explore Test Packages</a></div>
+    <div class="trust"><span>Easy online booking</span><span>Home collection option</span><span>Secure patient details</span></div>
+  </div>
+  <div class="hero-card"><div class="big-icon">🧪</div><h3>Your health deserves clarity.</h3><p>Browse available tests and submit a booking request in a few simple steps.</p></div>
+</div></section>
+<section id="services"><div class="wrap"><div class="section-head"><div class="eyebrow">Our services</div><h2>Healthcare services in one place</h2><p>Convenient options for patients and families.</p></div>
+<div class="cards">
+  <div class="card"><div class="card-icon">🧬</div><h3>Laboratory Tests</h3><p>Browse individual blood, urine and other diagnostic tests.</p></div>
+  <div class="card"><div class="card-icon">📦</div><h3>Health Packages</h3><p>Explore curated preventive health check-up packages.</p></div>
+  <div class="card"><div class="card-icon">🏠</div><h3>Home Sample Collection</h3><p>Request a convenient sample collection visit at your address.</p></div>
+</div></div></section>
+<section id="tests"><div class="wrap"><div class="section-head"><div class="eyebrow">Test catalogue</div><h2>Popular tests & packages</h2><p>These are demonstration prices. Replace them with your approved price list.</p></div>
+<div class="test-list" id="testList"></div>
+</div></section>
+<section class="booking-area" id="booking"><div class="wrap"><div class="section-head"><div class="eyebrow">Appointment request</div><h2>Book your diagnostic test</h2><p>Choose tests and tell us how you would like to provide your sample.</p></div>
+<div class="booking-grid">
+<form class="form-card" id="bookingForm"><h3>Patient details</h3>
+<label for="patient">Patient name *</label><input id="patient" required placeholder="Enter patient name">
+<div class="row2"><div><label for="phone">Mobile number *</label><input id="phone" required inputmode="tel" pattern="[0-9+ -]{10,15}" placeholder="10-digit mobile"></div><div><label for="date">Preferred date *</label><input id="date" required type="date"></div></div>
+<label for="mode">Collection preference *</label><select id="mode"><option>Visit diagnostic centre</option><option>Home sample collection</option></select>
+<label for="address">Address (required for home collection)</label><textarea id="address" rows="2" placeholder="Door number, street, area, city"></textarea>
+<label for="notes">Additional notes (optional)</label><textarea id="notes" rows="2" placeholder="Any information for the centre"></textarea>
+<div class="total"><span>Selected tests total</span><span id="total">₹0</span></div>
+<button class="btn green" type="submit" style="width:100%">Submit booking request</button>
+<p class="notice">Demo version: bookings are stored only in this browser. WhatsApp opens a prepared message for you to send. A live system needs a secure backend and WhatsApp Business API integration.</p>
+</form>
+<div class="form-card"><h3>How booking works</h3><div class="card" style="box-shadow:none;margin-bottom:12px"><b>1. Select your tests</b><p>Choose one or more tests from the catalogue.</p></div><div class="card" style="box-shadow:none;margin-bottom:12px"><b>2. Enter patient details</b><p>Provide a contact number and preferred date.</p></div><div class="card" style="box-shadow:none;margin-bottom:12px"><b>3. Submit your request</b><p>The centre confirms availability and collection arrangements.</p></div><div class="tag">Booking request – confirmation pending</div></div>
+</div></div></section>
+<section id="admin"><div class="wrap"><div class="section-head"><div class="eyebrow">Centre management</div><h2>Admin booking dashboard</h2><p>Demo dashboard showing bookings saved in this browser only.</p></div>
+<div class="admin"><div class="admin-top"><div><b>Booking requests</b><div class="notice">For demonstration only — production admin access will require a secure login.</div></div><button class="btn secondary" id="refresh">Refresh bookings</button></div>
+<div style="overflow-x:auto"><table><thead><tr><th>Booking ID</th><th>Patient</th><th>Mobile</th><th>Tests</th><th>Collection</th><th>Date</th><th>Amount</th></tr></thead><tbody id="bookingRows"><tr><td colspan="7" style="color:#64748b">No bookings yet.</td></tr></tbody></table></div>
+</div></div></section>
+</main>
+<footer><div class="wrap"><b id="footerName">Your Diagnostic Centre</b><p>Address: Add your centre address here · Phone: Add your contact number</p><p>Website starter prototype. Replace sample details and prices before publishing.</p></div></footer>
+<script>
+const tests=[
+ {name:"Complete Blood Count (CBC)",price:350,desc:"Haematology"},
+ {name:"Thyroid Profile",price:500,desc:"T3, T4 and TSH"},
+ {name:"Fasting Blood Sugar",price:100,desc:"Diabetes screening"},
+ {name:"Lipid Profile",price:450,desc:"Cholesterol assessment"},
+ {name:"Liver Function Test",price:600,desc:"Liver profile"},
+ {name:"Kidney Function Test",price:550,desc:"Renal profile"},
+ {name:"Vitamin D",price:800,desc:"Vitamin assessment"},
+ {name:"Basic Health Check-up",price:969,desc:"Sample package"}
+];
+const selected=new Set();
+const list=document.getElementById('testList');
+tests.forEach((t,i)=>{const el=document.createElement('label');el.className='test';el.innerHTML=`<span><strong>${t.name}</strong><small>${t.desc}</small></span><span style="display:flex;align-items:center;gap:12px"><b>₹${t.price}</b><input type="checkbox" data-index="${i}" aria-label="Select ${t.name}"></span>`;list.appendChild(el)});
+function updateTotal(){let sum=0;selected.forEach(i=>sum+=tests[i].price);document.getElementById('total').textContent='₹'+sum}
+list.addEventListener('change',e=>{if(e.target.matches('input[type=checkbox]')){const i=Number(e.target.dataset.index);e.target.checked?selected.add(i):selected.delete(i);updateTotal()}});
+function getBookings(){try{return JSON.parse(localStorage.getItem('diagnosticBookings')||'[]')}catch(e){return []}}
+function renderBookings(){const rows=document.getElementById('bookingRows');const data=getBookings();if(!data.length){rows.innerHTML='<tr><td colspan="7" style="color:#64748b">No bookings yet.</td></tr>';return}rows.innerHTML=data.map(b=>`<tr><td>${b.id}</td><td>${escapeHtml(b.patient)}</td><td>${escapeHtml(b.phone)}</td><td>${escapeHtml(b.tests)}</td><td>${escapeHtml(b.mode)}</td><td>${escapeHtml(b.date)}</td><td>₹${b.amount}</td></tr>`).join('')}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+document.getElementById('bookingForm').addEventListener('submit',e=>{e.preventDefault();if(!selected.size){alert('Please select at least one test.');return}const mode=document.getElementById('mode').value;const address=document.getElementById('address').value.trim();if(mode==='Home sample collection'&&!address){alert('Please enter the home collection address.');return}
+const amount=[...selected].reduce((s,i)=>s+tests[i].price,0);const testNames=[...selected].map(i=>tests[i].name).join(', ');const b={id:'DC'+Date.now().toString().slice(-7),patient:document.getElementById('patient').value.trim(),phone:document.getElementById('phone').value.trim(),date:document.getElementById('date').value,mode,address,notes:document.getElementById('notes').value,tests:testNames,amount,created:new Date().toISOString()};
+const all=getBookings();all.unshift(b);localStorage.setItem('diagnosticBookings',JSON.stringify(all));renderBookings();
+const msg=`New diagnostic booking request%0ABooking: ${b.id}%0APatient: ${encodeURIComponent(b.patient)}%0AMobile: ${encodeURIComponent(b.phone)}%0ATests: ${encodeURIComponent(b.tests)}%0ACollection: ${encodeURIComponent(b.mode)}%0ADate: ${encodeURIComponent(b.date)}%0AAmount: ₹${amount}%0AAddress: ${encodeURIComponent(address||'Not provided')}`;
+alert('Demo booking saved in this browser. WhatsApp will open with a prepared message. Configure the centre WhatsApp number in the live version.');
+// Replace 91XXXXXXXXXX with the centre's WhatsApp number, including country code.
+window.open('https://wa.me/91XXXXXXXXXX?text='+msg,'_blank');
+});
+document.getElementById('refresh').addEventListener('click',renderBookings);renderBookings();
+const date=document.getElementById('date');date.min=new Date().toISOString().split('T')[0];
+</script>
+</body></html>
